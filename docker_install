@@ -1,0 +1,22 @@
+# Older version of docker - docker, docker.io , or docker-engine
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
+sudo apt-get update
+sudo apt-get install     apt-transport-https     ca-certificates     curl     gnupg-agent     software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+apt-key list
+lsb_release -cs
+sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) \
+
+sudo apt-get update
+apt-cache madison docker-ce
+
+# docker-ce --> community edition
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+sudo docker run hello-world
+docker images
+sudo docker images
+sudo docker ps
+sudo docker container list
